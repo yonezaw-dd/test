@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^tiltrotor.co.jp
+RewriteRule ^(.*)$ https://www.tiltrotor.co.jp/$1 [R=301,L]
+
+RewriteEngine on
+RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteRule ^(.*)index.html$https://www.tiltrotor.co.jp/$1 [R=301,L]
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
